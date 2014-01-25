@@ -15,7 +15,7 @@ public interface IPopulationModel {
      *   How the population is fractioned into parties + "undecided".
      *   Sums up to 1.
      */
-    public void generatePopulation(int populationSize, double[] populationFractions);
+    void generatePopulation(int populationSize, double[] populationFractions);
 
     /*
      * Used in initialization
@@ -23,7 +23,7 @@ public interface IPopulationModel {
      * @statements
      *   List of statements that will be used in this game round
      */
-    public void setStatements(List<Statement> questions);
+    void setStatements(List<Statement> questions);
 
     /*
      * Applies changes to the population based on answer to a statement.
@@ -34,17 +34,23 @@ public interface IPopulationModel {
      *   True - Positive answer
      *   False - Negative answer
      */
-    public void applyAnswer(int statement, bool answer);
+    void applyAnswer(int player, int statement, bool answer);
+
+    /*
+     * Returns the population of a player in range 0 to 1,
+     * such that the sum of popularity of all players equals 1.
+     */
+    double getPopularity(int player);
 
     /*
      * Retrieves all the game objects representing the population
      * 
      */
-    public List<GameObject> getPopulation();
+    List<GameObject> getPopulation();
 
     /*
      * 
      */
-    public void addMutators(IEnumerable<GroupModel.GameObjectMutator> gameObjectMutators);
+    void addMutators(IEnumerable<GroupModel.GameObjectMutator> gameObjectMutators);
 }
 
