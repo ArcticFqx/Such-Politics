@@ -23,8 +23,8 @@ public class GameScreen : MonoBehaviour {
 
     void OnGUI()
     {
-        float h = this.camera.pixelRect.height;
-        float w = this.camera.pixelRect.width;
+        float h = Screen.height;
+        float w = Screen.width;
 
         hSliderValue = GUI.HorizontalSlider(
                 new Rect(w / 2 - w*0.2f, h - h * 0.29f, w*0.4f, 20.0f), 
