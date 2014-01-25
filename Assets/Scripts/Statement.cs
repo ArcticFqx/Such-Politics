@@ -7,12 +7,23 @@ public class Statement{
     private string positive;
     private string negative;
 
-	Statement(JSONNode node)
+	public Statement(JSONNode node)
     {
         issue = node["issue"];
-        category = node["statement"];
+        category = node["category"];
         positive = node["positive"];
         negative = node["negative"];
+    }
+
+    public static Statement[] getStatements()
+    {
+        JSONNode json = JSON.Parse(System.IO.File.ReadAllText("assets/scripts/test.json"));
+        Statement[] statements = new Statement[json["statement"].Count];
+        for (int i = 0; i < json["statement"].Count; i++)
+        {
+            statements[i] = new Statement(json["statement"][i]);
+        }
+        return statements;
     }
 
     public string getIssue()
