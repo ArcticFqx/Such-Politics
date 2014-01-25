@@ -1,19 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
-using SimpleJSON;
-
 public class GUITest : MonoBehaviour {
 	// Use this for initialization
     public float hSliderValue = 0.0F;
+    Statement[] statements;
+
     string question;
     string category;
-    JSONNode json;
+
 	void Start () {
-        string text = System.IO.File.ReadAllText("assets/scripts/test.json");
-        json = JSON.Parse(text);
-        int start = Random.Range(0, json["statement"].Count);
-        question = json["statement"][start]["issue"];
-        category = json["statement"][start]["category"] + " issue";
+        statements = Statement.getStatements();
+        int start = Random.Range(0, statements.Length);
+        question = statements[start].getIssue();
+        category = statements[start].getCategory() + " issue";
 
 	}
 	
