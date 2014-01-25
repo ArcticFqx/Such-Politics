@@ -1,8 +1,71 @@
 {
-	"politics":
+	"statement" :
 	[
-		{"question" : "Lower age for nucler weapons at school to deter criminals"},
-		{"question" : "Voting rights for zombies"},
-		{"question" : "Voting rights for zombiesa asdjas asd asd a sd as da sd a sd ajsdh akjsdh akdh kajdka dskjah skdj ahksdh aks dhakj shdkajdkajhdjahdjahskd askd ajs dkajdh "},
+		// Foregin statements
+		{
+			"issue" : "Birds immigrate to our beloved country because of global warming, they are taking our jobs, what should we do to stop the immigration?",
+			"solution" : 
+			[
+				{
+					"option": "Stricter border control",
+					"value": true
+				},
+				{
+					"option": "We hire eagles to deal with them",
+					"value": false
+				}
+			],
+			"category" : "Foreign"
+
+		},
+		{
+			"issue" : "Our space program has discovered large amounts of helium on the moon, but they are being occupied by space nazis, what should we do about them?",
+			"solution" : 
+			[
+				{
+					"option" : "Declare war",
+					"value" : true
+				},
+				{
+					"option" : "Resolve this through diplomatic channels",
+					"value" : false
+				}
+			],
+			"category" : "Foreign"
+		},
+		{
+			"issue" : "The people of easter island has all moved to the southern part of the island, this puts the island out of balance which in turn could flip it over and cause tsunamis",
+			"solution" : 
+			[
+				{
+					"option" : "Relocate the population to a distant location",
+					"value" : true
+				},
+				{
+					"option" : "Build tourist spots on the northern parts to attract people there and restore balance",
+					"value" : false
+				}
+
+			],
+			"category" : "Foreign"
+		},
+		{
+			"issue" : "Colonies on the moon demands independence from us, what do you suggest we do?",
+			"solution" : 
+			[
+				{
+					"option" : "Send undead military zombies to discipline them",
+					"value" : true
+				},
+				{
+					"option" : "Lower the import tax on cheese",
+					"value" : false
+				}
+			]
+		},
+		// Environmental issues
+		{
+
+		}
 	]
 }
