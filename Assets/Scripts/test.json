@@ -1,71 +1,81 @@
 {
 	"statement" :
 	[
-		// Foregin statements
+		// Foreign statements
 		{
+			"category" : "Foreign",
 			"issue" : "Birds immigrate to our beloved country because of global warming, they are taking our jobs, what should we do to stop the immigration?",
-			"solution" : 
-			[
-				{
-					"option": "Stricter border control",
-					"value": true
-				},
-				{
-					"option": "We hire eagles to deal with them",
-					"value": false
-				}
-			],
-			"category" : "Foreign"
-
+			"positive" : "Stricter border control",
+			"negative" : "We hire eagles to deal with them"
 		},
 		{
+			"category" : "Foreign",
 			"issue" : "Our space program has discovered large amounts of helium on the moon, but they are being occupied by space nazis, what should we do about them?",
-			"solution" : 
-			[
-				{
-					"option" : "Declare war",
-					"value" : true
-				},
-				{
-					"option" : "Resolve this through diplomatic channels",
-					"value" : false
-				}
-			],
-			"category" : "Foreign"
+			"positive" : "Declare war",
+			"negative" : "Resolve this through diplomatic channels"
 		},
 		{
-			"issue" : "The people of easter island has all moved to the southern part of the island, this puts the island out of balance which in turn could flip it over and cause tsunamis",
-			"solution" : 
-			[
-				{
-					"option" : "Relocate the population to a distant location",
-					"value" : true
-				},
-				{
-					"option" : "Build tourist spots on the northern parts to attract people there and restore balance",
-					"value" : false
-				}
-
-			],
-			"category" : "Foreign"
+			"category" : "Foreign",
+			"issue" : "The people of easter island has all moved to the southern part of the island, this puts the island out of balance which in turn could flip it over and cause tsunamis", 
+			"positive" : "Relocate the population to a distant location",
+			"positive" : "Build tourist spots on the northern parts to attract people there and restore balance"
 		},
 		{
-			"issue" : "Colonies on the moon demands independence from us, what do you suggest we do?",
-			"solution" : 
-			[
-				{
-					"option" : "Send undead military zombies to discipline them",
-					"value" : true
-				},
-				{
-					"option" : "Lower the import tax on cheese",
-					"value" : false
-				}
-			]
+			"category" : "Foreign",
+			"issue" : "Colonies on the moon demands independence from us, what do you suggest we do?", 
+			"negative" : "Send undead military zombies to discipline them",
+			"positive" : "Lower the import tax on cheese"
 		},
 		// Environmental issues
 		{
-
+			"category" : "Environmental",
+			"issue" : "Global warming is at hand, the problem is the massive population of cows pumping out methane farts",
+			"positive"  : "Increase meat consumption to decrease the total cow population",
+			"negative"  : "Introduce a family plan for cows, which should shrink the population in the long term"
+		},
+		{
+			"category" : "Environmental",
+			"issue" : "Last years meteor strike caused a lot of commotion and raised concerns in how well you could survive in your fallout bunker, name one thing you would do as a president",
+			"positive"  : "All shelters should be equiped with nuclear power to provide energy when such a crisis occurs again",
+			"negative"  : "Write an AI that would take the role governmental role while chaos reigns"
+		},
+		{
+			"category" : "Environmental",
+			"issue" : "It has recently been discovered that corn has an inteligence and a mental capacity comparable to dolphins, what can we do to improve their living conditions?",
+			"positive"  : "Continue to consume their souls, their inteligence will be absorbed while keeping up the fight against hunger",
+			"negative"  : "Hook them up to machines so we can interpret what they are thinking FOR SCIENCE!"
+		},
+		// Economy category
+		{
+			"category" : "Economy",
+			"issue" : "Product placement in dreams is becoming an increasing anoyance, people demand you do something about it",
+			"positive" : "Make a disclaimer pop up everytime a dream initiates",
+			"negative" : "You hear their demands and will push for even more products in dreams"
+		},
+		// Social/Crime
+		{
+			"category" : "Social",
+			"issue" : "Schools and other areas where young people gather has been less safe lately, what will you do about it?",
+			"positive" : "Lower the minimum age for using weapons of mass destruction, which will arm more people and deter criminals",
+			"negative" : "Shut down those institutions, thus removing the areas the criminals work"
+		},
+		{
+			"category" : "Social",
+			"issue" : "Dental health standards have lowered the last couple of years, what will you do to combat this issue?",
+			"positive" : "Government funded braces and tooth shining for everyone!",
+			"negative" : "Create a police to uphold a mandatory tooth brushing law"
+		},
+		{
+			"category" : "Social",
+			"issue" : "People loose IDs which they should carry around, any ideas on how to solve that?",
+			"positive" : "Give everyone a free cat which you have to carry around, people love cats and they will act as an ID",
+			"negative" : "Make slavery legal, if they don't have an ID, you can take ownership of that person"
+		},
+		{
+			"category" : "Social",
+			"issue" : "Dihydrogenmonokside has prooven to be a dangerous chemical with a 100% death rate of individuals who have been exposed to it",
+			"positive" : "Research an drug that will cure you of poisoning, taking us even closer to a superhuman state",
+			"negative" : "Ban dihydrogenmonokside and arrest people who possess it"
 		}
 	]
 }

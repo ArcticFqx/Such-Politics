@@ -7,11 +7,13 @@ public class GUITest : MonoBehaviour {
     public float hSliderValue = 0.0F;
     string question;
     string category;
+    JSONNode json;
 	void Start () {
         string text = System.IO.File.ReadAllText("assets/scripts/test.json");
-        JSONNode n = JSON.Parse(text);
-        question = n["statement"][1]["issue"];
-        category = n["statement"][1]["category"] + " issue";
+        json = JSON.Parse(text);
+        int start = Random.Range(0, json["statement"].Count);
+        question = json["statement"][start]["issue"];
+        category = json["statement"][start]["category"] + " issue";
 
 	}
 	
