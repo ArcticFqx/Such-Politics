@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-public class GUITest : MonoBehaviour {
+public class GameScreen : MonoBehaviour {
 	// Use this for initialization
     public float hSliderValue = 0.0F;
     Statement[] statements;
@@ -23,8 +23,6 @@ public class GUITest : MonoBehaviour {
 
     void OnGUI()
     {
-      
-
         float h = this.camera.pixelRect.height;
         float w = this.camera.pixelRect.width;
 
@@ -44,6 +42,5 @@ public class GUITest : MonoBehaviour {
             To access slider value in other scripts, do 
             Camera.current.GetComponent<GUITest>().hSliderValue;
         */
-        
     }
 }
