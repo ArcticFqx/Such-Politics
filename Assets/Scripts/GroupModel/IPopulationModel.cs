@@ -15,7 +15,7 @@ public interface IPopulationModel {
      *   How the population is fractioned into parties + "undecided".
      *   Sums up to 1.
      */
-    void generatePopulation(int populationSize, double[] populationFractions, List<GroupModel.GameObjectMutator> gameObjectMutators);
+    void generatePopulation(int populationSize, double[] populationFractions, List<GroupModel.GameObjectMutator> gameObjectMutators, GameObject initialGameObject);
 
     /*
      * Used in initialization
