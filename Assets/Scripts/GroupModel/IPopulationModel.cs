@@ -47,3 +47,4 @@ public interface IPopulationModel {
      * 
      */
     List<GameObject> getPopulation();
+}
