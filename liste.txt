@@ -1,0 +1,9 @@
+Alt som er tabbet er optional
+
+- Vise alternativene
+- Scores
+- Ai for motstander
+- Win screen
+- Feeling slider
+	- Se reaksjoner
+- Spillprogresjon (gå fra et spørsmål til et annet)
