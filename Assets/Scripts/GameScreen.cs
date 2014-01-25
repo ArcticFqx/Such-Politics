@@ -7,19 +7,29 @@ public class GameScreen : MonoBehaviour {
 
     string question;
     string category;
-
+    GameManager manager;
 	void Start () {
         statements = Statement.getStatements();
         int start = Random.Range(0, statements.Length);
         question = statements[start].getIssue();
         category = statements[start].getCategory() + " issue";
-
+        manager = GameObject.FindObjectOfType<GameManager>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
+
+    void addScoreAndLoadNext(int score)
+    {
+        manager.addScore(score);
+        print("Your score is now " + manager.getScore());
+        if (manager.getScore() > 5)
+        {
+            Application.LoadLevel("menu");
+        }
+    }
 
     void OnGUI()
     {
@@ -38,9 +48,13 @@ public class GameScreen : MonoBehaviour {
         GUI.Box(new Rect(w / 2.0f - w * 0.25f, h - h * 0.25f, w * 0.5f, h * 0.22f), question, style);
         GUI.Box(new Rect(w / 2.0f - w * 0.25f, h - h * 0.25f, w * 0.5f, 20), category);
 
-        /*
-            To access slider value in other scripts, do 
-            Camera.current.GetComponent<GUITest>().hSliderValue;
-        */
+        if (GUI.Button(new Rect(w * 0.025f, h / 2, w * 0.2f, h * 0.1f), "Answer 1"))
+        {
+            addScoreAndLoadNext(1);
+        }
+        if (GUI.Button(new Rect(w - w * 0.225f, h / 2, w * 0.2f, h * 0.1f), "Answer 2"))
+        {
+            addScoreAndLoadNext(-1);
+        }
     }
 }
