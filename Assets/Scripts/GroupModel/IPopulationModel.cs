@@ -49,8 +49,8 @@ public interface IPopulationModel {
     List<GameObject> getPopulation();
 
     /*
-     * 
+     * Add list of mutators such that mutator[0] is for player1, ...
      */
-    void addMutators(IEnumerable<GroupModel.GameObjectMutator> gameObjectMutators);
+    void addMutators(List<GroupModel.GameObjectMutator> gameObjectMutators);
 }
 
