@@ -12,7 +12,10 @@ public class GameManager : MonoBehaviour {
     public AudioClip positiveButtonClip;
     public AudioClip negativeButtonClip;
 
+    public float soundEffectVolum = .8f;
+
     AudioSource source;
+    AudioSource soundEffects;
     int score;
 
     public int activeStatement;
@@ -23,6 +26,8 @@ public class GameManager : MonoBehaviour {
         source.Play();
         score = 0;
 
+        soundEffects.loop = false;
+        soundEffects.volume = soundEffectVolum;
     }
 
 	void Start ()

@@ -166,6 +166,7 @@ public class GameScreen : MonoBehaviour {
         {
             float newScale  = (float)manager.populationEngine.getDistanceFrom(hSliderValue, manager.activeStatement, 0);
             prevHSliderValue = hSliderValue;
+            Debug.Log(newScale);
             sun.transform.localScale = new Vector3(newScale, newScale, newScale);
         }
     }
