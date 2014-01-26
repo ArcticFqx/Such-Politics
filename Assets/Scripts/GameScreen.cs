@@ -165,6 +165,7 @@ public class GameScreen : MonoBehaviour {
         if (hSliderValue != prevHSliderValue || force)
         {
             manager.populationEngine.getDistanceFrom(hSliderValue, manager.activeStatement, 0);
+            prevHSliderValue = hSliderValue;
         }
     }
 }
