@@ -50,6 +50,7 @@ public class GameScreen : MonoBehaviour {
         print("Your score is now " + manager.getScore());
         if (manager.getScore() > 5)
         {
+            manager.init();
             Application.LoadLevel("menu");
         }
         else

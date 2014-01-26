@@ -11,10 +11,15 @@ public class GameManager : MonoBehaviour {
     AudioSource source;
     int score;
 
-	void Start () 
+    public void init()
     {
         score = 0;
         source = gameObject.AddComponent<AudioSource>();
+    }
+
+	void Start () 
+    {
+        init();
 	}
 
     void Awake()
