@@ -17,7 +17,7 @@ class PopulationBuilder
         */
     public static double[][] buildPopulation(int populationSize, int numPlayers, double[] populationSpread, double mean, double variance) {
         double[][] population = new double[populationSize][];
-        Normal normalDistribution = Normal.WithMeanVariance(mean, variance);
+        Normal normalDistribution = Normal.WithMeanVariance(mean, variance, null);
 
         for (int i = 0; i < populationSize; i++)
         {
@@ -34,7 +34,6 @@ class PopulationBuilder
             
         double xBar = normalDistribution.Sample();
         double pVal = normalDistribution.CumulativeDistribution(xBar);
-        UnityEngine.Debug.Log(individual.Length + " < " + favorite);
         individual[favorite] = pVal;
 
         // Spread the leftovers over the rest of the players, based on weight for leftover neutral
