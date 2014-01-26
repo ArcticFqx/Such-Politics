@@ -105,10 +105,13 @@ public class DistrubatedPopulationModel : IPopulationModel
 
     public double getDistanceFrom(double point, int question, int player)
     {
-        double distance = opinions[question][player];
-        distance = point - distance;
+        double totOpinion = 0;
+        for (int person = 0; person < opinions[person].Length; person++)
+        {
+            totOpinion += point - opinions[person][question];
+        }
 
-        return distance;
+        return ((totOpinion / opinions.Length) + 1) / 2;
     }
 
     /*
