@@ -336,7 +336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hSliderValue: 0
-  baseObject: {fileID: 0}
+  baseObject: {fileID: 100000, guid: d70228411ad20a3478e29f4ce1e8474a, type: 2}
 --- !u!4 &1851834551
 Transform:
   m_ObjectHideFlags: 0

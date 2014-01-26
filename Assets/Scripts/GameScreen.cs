@@ -74,8 +74,10 @@ public class GameScreen : MonoBehaviour {
 			Application.LoadLevel("gamescene");
 		}
 	}
-	
-	void nextStatement() {
+
+    void nextStatement()
+    {
+        timestamp = Time.time + 20.0f;
 		int start = Random.Range(0, statements.Length);
 		manager.activeStatement = start;
 		question = statements[start].getIssue();
