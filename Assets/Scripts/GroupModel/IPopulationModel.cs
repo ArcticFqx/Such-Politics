@@ -15,7 +15,12 @@ public interface IPopulationModel {
      *   How the population is fractioned into parties + "undecided".
      *   Sums up to 1.
      */
-    void generatePopulation(int populationSize, double[] populationFractions);
+    void generatePopulation(int populationSize, double[] populationFractions, List<GroupModel.GameObjectMutator> gameObjectMutators, GameObject initialGameObject);
+
+	/*
+	 * Same result as generatePopulation, except with premade gameObjects
+	 */
+	void generateWithPremadeObjects(IEnumerable<GameObject> people, double[] populationFractions, List<GroupModel.GameObjectMutator> gameObjectMutators);
 
     /*
      * Used in initialization
@@ -49,8 +54,10 @@ public interface IPopulationModel {
     List<GameObject> getPopulation();
 
     /*
-     * 
-     */
-    void addMutators(IEnumerable<GroupModel.GameObjectMutator> gameObjectMutators);
+    * Get opinion distance from a point on the slider.
+    * point: value between -1 and 1
+    * question: which question we are on
+    * player: which players turn it is.
+    */
+    double getDistanceFrom(double point, int question, int player);
 }
-

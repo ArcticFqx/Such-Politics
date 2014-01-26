@@ -34,7 +34,7 @@ public class PopulationManager {
 		return randomPeople;
 	}
 
-	public int GetSize() {
+	public int GetCount() {
 		return people.Count;
 	}
 

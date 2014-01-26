@@ -14,7 +14,7 @@ public class Statement{
         positive = node["positive"];
         negative = node["negative"];
     }
-
+    
     public static Statement[] getStatements()
     {
         JSONNode json = JSON.Parse(System.IO.File.ReadAllText("assets/scripts/statements.json"));
