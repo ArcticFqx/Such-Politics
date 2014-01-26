@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
     // GameObject.FindObjectOfType<GameManager>();
 
     public AudioClip audioClip;
+    public AudioClip intro;
     AudioSource source;
     int score;
 
@@ -15,12 +16,15 @@ public class GameManager : MonoBehaviour {
     public IPopulationModel populationEngine;
 
 	public void init ()     {
+        source.clip = intro;
+        source.Play();
         score = 0;
-        source = gameObject.AddComponent<AudioSource>();
+
     }
 
-	void Start () 
+	void Start ()
     {
+        source = gameObject.AddComponent<AudioSource>();
         init();
 	}
 
@@ -41,6 +45,7 @@ public class GameManager : MonoBehaviour {
 
     public void playSong()
     {
+        source.Stop();
         source.clip = audioClip;
         source.Play();
         source.volume = 1.0f;
