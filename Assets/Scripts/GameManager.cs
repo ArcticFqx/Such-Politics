@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour {
     AudioSource source;
     int score;
 
+    public int activeStatement;
+    public IPopulationModel populationEngine;
+
 	public void init ()     {
         score = 0;
         source = gameObject.AddComponent<AudioSource>();
