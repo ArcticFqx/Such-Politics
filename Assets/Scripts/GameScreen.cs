@@ -7,6 +7,8 @@ using GroupModel;
 public class GameScreen : MonoBehaviour {
 	// Use this for initialization
 	public float hSliderValue = 0.0F;
+    private float prevHSliderValue = 0.0F;
+
 	Statement[] statements;
 	
 	string question;
@@ -16,6 +18,8 @@ public class GameScreen : MonoBehaviour {
 	
 	float timestamp;
 	GameManager manager;
+
+    private GameObject sun;
 	
 	public GameObject baseObject;
 	
@@ -25,7 +29,9 @@ public class GameScreen : MonoBehaviour {
 		manager = GameObject.FindObjectOfType<GameManager>();
 		
 		manager.populationEngine = new GroupModel.PopulationCollections ();
-		
+
+        sun = GameObject.Find("Sun");
+
 		List<GameObjectMutator> mutators = new List<GameObjectMutator> ();
 		mutators.Add (new ColorMutator (Color.red));
 		mutators.Add (new ColorMutator (Color.blue));
@@ -73,6 +79,8 @@ public class GameScreen : MonoBehaviour {
 			
 			Application.LoadLevel("gamescene");
 		}
+
+        updateSun(false);
 	}
 
     void nextStatement()
@@ -84,6 +92,8 @@ public class GameScreen : MonoBehaviour {
 		category = statements[start].getCategory() + " issue";
 		positive = statements[start].getPositive();
 		negative = statements[start].getNegative();
+
+        updateSun(true);
 	}
 	
 	void addScoreAndLoadNext(int score)
@@ -149,4 +159,12 @@ public class GameScreen : MonoBehaviour {
 			addScoreAndLoadNext(-1);
 		}
 	}
+
+    private void updateSun(bool force)
+    {
+        if (hSliderValue != prevHSliderValue || force)
+        {
+            manager.populationEngine.getDistanceFrom(hSliderValue, manager.activeStatement, 0);
+        }
+    }
 }
