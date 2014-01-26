@@ -32,7 +32,7 @@ public class PopulationCollections : IPopulationModel {
 		people.AddRange (generatedPeople);
 
 			int totalGeneratedPeople = 0;
-			for (int i = 0; i < people.Count; i++) {
+			for (int i = 0; i < populationFractions.Length; i++) {
 				int popSize = (int)(people.Count * populationFractions[i]);
 
 				List<GameObject> peopleList = people.GetRange(totalGeneratedPeople, popSize);
