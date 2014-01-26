@@ -17,7 +17,7 @@ public class Statement{
 
     public static Statement[] getStatements()
     {
-        JSONNode json = JSON.Parse(System.IO.File.ReadAllText("assets/scripts/test.json"));
+        JSONNode json = JSON.Parse(System.IO.File.ReadAllText("assets/scripts/statements.json"));
         Statement[] statements = new Statement[json["statement"].Count];
         for (int i = 0; i < json["statement"].Count; i++)
         {

@@ -26,6 +26,12 @@
 			"negative" : "Send undead military zombies to discipline them",
 			"positive" : "Lower the import tax on cheese"
 		},
+		{
+			"category" : "Foreign",
+			"issue" : "China is threatning with war if we dont live according to their timezone.",
+			"positive" : "Collect all watches, crush them and send them to China.",
+			"negative" : "Refuse and move to a pocket universe. "
+		},
 		// Environmental issues
 		{
 			"category" : "Environmental",
@@ -37,7 +43,7 @@
 			"category" : "Environmental",
 			"issue" : "Last years meteor strike caused a lot of commotion and raised concerns in how well you could survive in your fallout bunker, name one thing you would do as a president",
 			"positive"  : "All shelters should be equiped with nuclear power to provide energy when such a crisis occurs again",
-			"negative"  : "Write an AI that would take the role governmental role while chaos reigns"
+			"negative"  : "Write an AI that would take the governmental role while chaos reigns"
 		},
 		{
 			"category" : "Environmental",
@@ -45,12 +51,48 @@
 			"positive"  : "Continue to consume their souls, their inteligence will be absorbed while keeping up the fight against hunger",
 			"negative"  : "Hook them up to machines so we can interpret what they are thinking FOR SCIENCE!"
 		},
+		{
+			"category" : "Environmental",
+			"issue" : "Moon radiation is approaching untolerable levels.",
+			"positive" : "Have scientists invent negative radiation to combat the moon radiation.",
+			"negative" : "Attach giants rockets to the moon and get rid of it."
+		},
+		{
+			"category" : "Environmental",
+			"issue" : "Vulcanos are erupting all over the world!",
+			"positive" : "Have CERN make mini black holes to suck in all the ashes.",
+			"negative" : "Move everyone underground where they will brace themselves for the upcoming iceage."
+		},
+		{
+			"category" : "Environmental",
+			"issue" : "Our sun is failing, winter is coming.",
+			"positive" : "Fetch a new star from the neighbouring star system.",
+			"negative" : "Hand out 1 extra bag of firewood to each household."
+		},
 		// Economy category
 		{
 			"category" : "Economy",
 			"issue" : "Product placement in dreams is becoming an increasing anoyance, people demand you do something about it",
 			"positive" : "Make a disclaimer pop up everytime a dream initiates",
 			"negative" : "You hear their demands and will push for even more products in dreams"
+		},
+		{
+			"category" : "Economy",
+			"issue" : "Infinite gold mine has been discovered, what do?",
+			"positive" : "Hire people smarted then you to figure it out",
+			"negative" : "Break the gold standards and devalue all currencies."
+		},
+		{
+			"category" : "Economy",
+			"issue" : "We are running out of metal for coins, what should we do?",
+			"positive" : "Pull metal fills from the teeth of seniors.",
+			"negative" : "Use worms instead of coins."
+		},
+		{
+			"category" : "Economy",
+			"issue" : "Error 404, money not found. Federal reserve is empty.",
+			"positive" : "Abolish the money system and use shells instead.",
+			"negative" : "Raise taxes to 98% from 97%."
 		},
 		// Social/Crime
 		{
@@ -74,8 +116,14 @@
 		{
 			"category" : "Social",
 			"issue" : "Dihydrogenmonokside has prooven to be a dangerous chemical with a 100% death rate of individuals who have been exposed to it",
-			"positive" : "Research an drug that will cure you of poisoning, taking us even closer to a superhuman state",
+			"positive" : "Research a drug that will cure you of poisoning, taking us even closer to a superhuman state",
 			"negative" : "Ban dihydrogenmonokside and arrest people who possess it"
+		},
+		{
+			"category" : "Social",
+			"issue" : "Kindergardeners are demanding to be taken seriously. Violent protests erupt over nap-nap time.",
+			"positive" : "Remove nap-nap time from all the kindergarderns. Introduce super fun sleepy time instead.",
+			"negative" : "Enforce the nap-nap time! Send in the military to deploy sleeping gas."
 		}
 	]
 }
