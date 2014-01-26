@@ -7,7 +7,7 @@ public class GameOver : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         engine = FindObjectOfType<GameManager>().populationEngine;
-        won = engine.getPopularity(0) > 0.5;
+        won = engine.getPopularity(0) > engine.getPopularity(1);
         if (won)
         {
             GetComponents<AudioSource>()[0].Play();
