@@ -10,6 +10,12 @@
 		},
 		{
 			"category" : "Foreign",
+			"issue" : "The dead are flooding the graveyard. What shall we do?",
+			"positive" : "Employ more zombie trainers.",
+			"negative" : "Increase gravestone taxes."
+		},
+		{
+			"category" : "Foreign",
 			"issue" : "Our space program has discovered large amounts of helium on the moon, but they are being occupied by space nazis, what should we do about them?",
 			"positive" : "Declare war",
 			"negative" : "Resolve this through diplomatic channels"
@@ -22,7 +28,7 @@
 		},
 		{
 			"category" : "Foreign",
-			"issue" : "Colonies on the moon demands independence from us, what do you suggest we do?", 
+			"issue" : "Colonies on the moon demands independence from us, what to do you suggest we do?", 
 			"negative" : "Send undead military zombies to discipline them",
 			"positive" : "Lower the import tax on cheese"
 		},
@@ -38,6 +44,18 @@
 			"issue" : "Global warming is at hand, the problem is the massive population of cows pumping out methane farts",
 			"positive"  : "Increase meat consumption to decrease the total cow population",
 			"negative"  : "Introduce a family plan for cows, which should shrink the population in the long term"
+		},
+		{
+			"category" : "Environmental",
+			"issue" : "The people are demanding better public transportation.",
+			"positive"  : "Deploy more giant turtles.",
+			"negative"  : "Attach rollerskaters to the public segways."
+		},
+		{
+			"category" : "Environmental",
+			"issue" : "The water supply has been poisoned.",
+			"positive"  : "Find them and destroy them.",
+			"negative"  : "Poison their pets."
 		},
 		{
 			"category" : "Environmental",
@@ -118,6 +136,18 @@
 			"issue" : "Dihydrogenmonokside has prooven to be a dangerous chemical with a 100% death rate of individuals who have been exposed to it",
 			"positive" : "Research a drug that will cure you of poisoning, taking us even closer to a superhuman state",
 			"negative" : "Ban dihydrogenmonokside and arrest people who possess it"
+		},
+		{
+			"category" : "Social",
+			"issue" : "Food is scarce and hunger has led angry mobs into the streets. How do we react?",
+			"positive" : "Invite them to a smorgasbord of cheese, piguins and guinea pigs.",
+			"negative" : "Test the new Anti angry mob itching powder."
+		},
+		{
+			"category" : "Social",
+			"issue" : "Flowers are scarce and Valentine’s day is coming up. How do we avoid a crisis?",
+			"positive" : "Use rats blood to color papertowels and hire an origamist to make decoy flowers.",
+			"negative" : "Declare martial law and excercise a curfew the days leading up to Valentine’s day."
 		},
 		{
 			"category" : "Social",
