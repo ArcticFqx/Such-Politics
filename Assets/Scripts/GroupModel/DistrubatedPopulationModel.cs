@@ -42,6 +42,13 @@ public class DistrubatedPopulationModel : IPopulationModel {
         }
     }
 
+	/*
+	 * Same result as generatePopulation, except with premade gameObjects
+	 */
+	public void generateWithPremadeObjects(IEnumerable<GameObject> people, double[] populationFractions, List<GroupModel.GameObjectMutator> gameObjectMutators) {
+
+	}
+
     public void setStatements(System.Collections.Generic.List<Statement> questions)
     {
         this.opinions = PopulationBuilder.buildPopulation(population.Length, questions.Count, opinionsSpread, opinionsMean, opinionsVariance);
