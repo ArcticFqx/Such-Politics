@@ -14,8 +14,8 @@ public class GameManager : MonoBehaviour {
 
     public float soundEffectVolum = .8f;
 
-    AudioSource source;
-    AudioSource soundEffects;
+    public AudioSource source;
+    public AudioSource soundEffects;
     int score;
 
     public int activeStatement;
@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour {
 	void Start ()
     {
         source = gameObject.AddComponent<AudioSource>();
+        soundEffects = gameObject.AddComponent<AudioSource>();
         init();
 	}
 

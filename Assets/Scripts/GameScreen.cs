@@ -152,11 +152,15 @@ public class GameScreen : MonoBehaviour {
 		if (GUI.Button(new Rect(w * 0.025f, h / 2, w * 0.2f, h * 0.4f), negative,style))
 		{
 			addScoreAndLoadNext(-1);
+            manager.soundEffects.clip = manager.negativeButtonClip;
+            manager.soundEffects.Play();
 		}
 		
 		if (GUI.Button(new Rect(w - w * 0.225f, h / 2, w * 0.2f, h * 0.4f), positive,style))
 		{
 			addScoreAndLoadNext(1);
+            manager.soundEffects.clip = manager.positiveButtonClip;
+            manager.soundEffects.Play();
 		}
 	}
 
