@@ -22,6 +22,9 @@ public class GameScreen : MonoBehaviour {
     private GameObject sun;
 	
 	public GameObject baseObject;
+
+    public int numStatements = 24;
+    private int statementCounter = 0; 
 	
 	void Start () {
 		timestamp = Time.time + 20.0f;
@@ -104,7 +107,7 @@ public class GameScreen : MonoBehaviour {
 		
 		manager.populationEngine.applyAnswer (0, manager.activeStatement, (score > 0 ? true : false));
 		print("Your score is now " + manager.getScore());
-		if (manager.getScore() > 5)
+		if (statementCounter == numStatements - 1)
 		{
 			Application.LoadLevel("menu");
 		}
@@ -112,6 +115,7 @@ public class GameScreen : MonoBehaviour {
 		{
 			//Application.LoadLevel("gamescene");
 			nextStatement();
+            statementCounter++;
 		}
 	}
 	
