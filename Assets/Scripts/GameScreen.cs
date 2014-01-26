@@ -20,17 +20,27 @@ public class GameScreen : MonoBehaviour {
         manager = GameObject.FindObjectOfType<GameManager>();
         positive = statements[start].getPositive();
         negative = statements[start].getNegative();
-        timestamp = Time.time + 15.0f;
+        timestamp = Time.time + 20.0f;
 	}
 
     bool isPlaying = false;
-
+    bool timeOut = false;
 	// Update is called once per frame
 	void Update () {
-        if ((timestamp - Time.time) < 8 && !isPlaying)
+        if ((timestamp - Time.time) < 4 && !isPlaying)
         {
-            GetComponent<AudioSource>().Play();
+            GetComponents<AudioSource>()[0].Play();
             isPlaying = true;
+        }
+        if ((timestamp - Time.time) < 1 && !timeOut)
+        {
+            timeOut = true;
+            GetComponents<AudioSource>()[1].Play();
+        }
+        if ((timestamp - Time.time) < 0)
+        {
+
+            Application.LoadLevel("gamescene");
         }
 	}
 
@@ -68,15 +78,17 @@ public class GameScreen : MonoBehaviour {
 
         style = new GUIStyle(GUI.skin.box);
         style.fontSize = 30;
-        GUI.Box(new Rect(w / 2.0f - 20, 20, 40, 40), ((int)(timestamp - Time.time)).ToString(),style);
-
+        if ((timestamp - Time.time) < 4)
+        {
+            GUI.Box(new Rect(w / 2.0f - 20, 20, 40, 40), ((int)(timestamp - Time.time)).ToString(), style);
+        }
         style = new GUIStyle(GUI.skin.button);
         style.wordWrap = true;
         style.fontSize = 20;
         style.alignment = TextAnchor.UpperLeft;
 
-        
 
+        if (timeOut) { return; }
         if (GUI.Button(new Rect(w * 0.025f, h / 2, w * 0.2f, h * 0.4f), positive,style))
         {
             addScoreAndLoadNext(1);
