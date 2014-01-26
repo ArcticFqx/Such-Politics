@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour {
 
     public AudioClip audioClip;
     public AudioClip intro;
+    public AudioClip positiveButtonClip;
+    public AudioClip negativeButtonClip;
+
     AudioSource source;
     int score;
 
