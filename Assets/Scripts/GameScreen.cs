@@ -164,8 +164,9 @@ public class GameScreen : MonoBehaviour {
     {
         if (hSliderValue != prevHSliderValue || force)
         {
-            manager.populationEngine.getDistanceFrom(hSliderValue, manager.activeStatement, 0);
+            float newScale  = (float)manager.populationEngine.getDistanceFrom(hSliderValue, manager.activeStatement, 0);
             prevHSliderValue = hSliderValue;
+            sun.transform.localScale = new Vector3(newScale, newScale, newScale);
         }
     }
 }
