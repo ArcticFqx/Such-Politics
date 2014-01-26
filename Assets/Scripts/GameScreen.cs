@@ -182,13 +182,13 @@ public class GameScreen : MonoBehaviour {
 		float rowHeight = 0.075f;
 		float rowWidth = 0.25f;
 		
-		float imageWidth = 0.15f;
+		float imageWidth = 0.13f;
 		
 		float totalHeight = numPlayers * rowHeight;
-
+		
 		float statPos_x = 0.725f;
 		float statPos_y = 0.1f;
-
+		
 		// Style for statBox
 		GUIStyle statStyle = new GUIStyle(GUI.skin.box);
 		
@@ -210,14 +210,14 @@ public class GameScreen : MonoBehaviour {
 				playerText = "Rep";
 				style.normal.textColor = Color.blue;
 			} else {
-				playerText = "Neutral";
+				playerText = "Neu";
 				style.normal.textColor = Color.green;
 			}
 			
 			GUI.Box (new Rect(w*statPos_x, h*(statPos_y + player*rowHeight), h*rowHeight, w*(imageWidth)), 
 			         playerText, style);
 			GUI.Box (new Rect(w*(statPos_x + imageWidth), h*(statPos_y + player*rowHeight), h*rowHeight, w*(rowWidth - imageWidth)), 
-			         ((int)(manager.populationEngine.getPopularity(player) * 100)).ToString() + "%", style);
+			         ((float)manager.populationEngine.getPopularity(player) * 100).ToString("F1") + "%", style);
 		}
 	}
 
