@@ -24,7 +24,7 @@ public class GameScreen : MonoBehaviour {
 	public GameObject baseObject;
 
     public int numStatements = 24;
-    private int statementCounter = 0; 
+    private int statementCounter = 0;
 	
 	void Start () {
 		timestamp = Time.time + 20.0f;
@@ -81,8 +81,7 @@ public class GameScreen : MonoBehaviour {
 		}
 		if ((timestamp - Time.time) < 0)
 		{
-			
-			Application.LoadLevel("gamescene");
+			//Application.LoadLevel("gamescene");
 		}
 
         updateSun(false);
@@ -113,7 +112,6 @@ public class GameScreen : MonoBehaviour {
 		}
 		else
 		{
-			//Application.LoadLevel("gamescene");
 			nextStatement();
             statementCounter++;
 		}
@@ -168,56 +166,6 @@ public class GameScreen : MonoBehaviour {
 			addScoreAndLoadNext(1);
             manager.soundEffects.clip = manager.positiveButtonClip;
             manager.soundEffects.Play();
-		}
-
-		drawStats ();
-	}
-	
-	private void drawStats() {
-		float h = Screen.height;
-		float w = Screen.width;
-		
-		int numPlayers = 3;
-		
-		float rowHeight = 0.075f;
-		float rowWidth = 0.25f;
-		
-		float imageWidth = 0.13f;
-		
-		float totalHeight = numPlayers * rowHeight;
-		
-		float statPos_x = 0.725f;
-		float statPos_y = 0.1f;
-		
-		// Style for statBox
-		GUIStyle statStyle = new GUIStyle(GUI.skin.box);
-		
-		GUI.backgroundColor = new Color (0.8f, 0.8f, 0.8f, 0.5f);
-		GUI.Box(new Rect(w * statPos_x, h * statPos_y, w * rowWidth, (float)totalHeight * h), "", statStyle);
-		
-		// Style for row
-		GUIStyle style = new GUIStyle ();
-		//style.wordWrap = true;
-		style.fontSize = (int)(rowHeight * h) - 1;
-		style.normal.textColor = Color.white;
-		
-		for (int player = 0; player < numPlayers; player++) {
-			string playerText;
-			if (player == 0) {
-				playerText = "You";
-				style.normal.textColor = Color.red;
-			} else if (player == 1) {
-				playerText = "Rep";
-				style.normal.textColor = Color.blue;
-			} else {
-				playerText = "Neu";
-				style.normal.textColor = Color.green;
-			}
-			
-			GUI.Box (new Rect(w*statPos_x, h*(statPos_y + player*rowHeight), h*rowHeight, w*(imageWidth)), 
-			         playerText, style);
-			GUI.Box (new Rect(w*(statPos_x + imageWidth), h*(statPos_y + player*rowHeight), h*rowHeight, w*(rowWidth - imageWidth)), 
-			         ((float)manager.populationEngine.getPopularity(player) * 100).ToString("F1") + "%", style);
 		}
 	}
 
