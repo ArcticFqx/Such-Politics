@@ -17,6 +17,11 @@ public interface IPopulationModel {
      */
     void generatePopulation(int populationSize, double[] populationFractions, List<GroupModel.GameObjectMutator> gameObjectMutators, GameObject initialGameObject);
 
+	/*
+	 * Same result as generatePopulation, except with premade gameObjects
+	 */
+	void generateWithPremadeObjects(IEnumerable<GameObject> people, double[] populationFractions, List<GroupModel.GameObjectMutator> gameObjectMutators);
+
     /*
      * Used in initialization
      * 
