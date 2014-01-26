@@ -37,21 +37,23 @@ public class GameScreen : MonoBehaviour {
 		mutators.Add (new ColorMutator (Color.blue));
 		mutators.Add (new ColorMutator (Color.green));
 		
-		int rows = 4;
-		int cols = 6;
+		int rows = 20;
+		int cols = 20;
 		manager.populationEngine.generatePopulation (rows*cols, new double[]{0.33, 0.33, 0.34}, mutators, baseObject);
 		
 		List<GameObject> objects = manager.populationEngine.getPopulation ();
 		
 		Camera cam = Camera.main;
-		
-		for (int y = 0; y < rows; y++) {
-			for (int x = 0; x < cols; x++) {
-				GameObject obj = objects[y*cols + x];
-				
-				obj.transform.position = new Vector3(x, y, cam.nearClipPlane);
-			}
-		}
+
+        for (int y = 0; y < rows; y++)
+        {
+            for (int x = 0; x < cols; x++)
+            {
+                GameObject obj = objects[y * cols + x];
+
+                obj.transform.position = new Vector3(x * .255f - 2.38f, y * .255f - 1.2f, cam.nearClipPlane);
+            }
+        }
 		
 		statements = Statement.getStatements();
 		manager.populationEngine.setStatements (new List<Statement>(statements));
