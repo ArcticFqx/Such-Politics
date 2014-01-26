@@ -488,8 +488,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a09dad89d11389ed000e82b8d76c639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeOut: 10
-  detachChildren: 0
 --- !u!1 &1003745525
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,6 +816,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: 7f13dca6622ea854ab73d3abee6e64b4, type: 3}
   intro: {fileID: 8300000, guid: 605c9d9cc72fcfe43ae291798a2ba98d, type: 3}
+  positiveButtonClip: {fileID: 8300000, guid: 857fa3498eaf4e14ebe48f29e48a2e51, type: 3}
+  negativeButtonClip: {fileID: 8300000, guid: 6ad47da333c8c264e9eaa67e05f18c28, type: 3}
+  soundEffectVolum: .800000012
+  source: {fileID: 0}
+  soundEffects: {fileID: 0}
   activeStatement: 0
 --- !u!4 &1321921202
 Transform:
