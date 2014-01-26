@@ -52,4 +52,12 @@ public interface IPopulationModel {
      * 
      */
     List<GameObject> getPopulation();
+
+    /*
+    * Get opinion distance from a point on the slider.
+    * point: value between -1 and 1
+    * question: which question we are on
+    * player: which players turn it is.
+    */
+    double getDistanceFrom(double point, int question, int player);
 }

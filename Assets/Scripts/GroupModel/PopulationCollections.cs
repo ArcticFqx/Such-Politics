@@ -189,6 +189,11 @@ public class PopulationCollections : IPopulationModel {
 			group.DestroyIt();
 		}
 	}
+
+    public double getDistanceFrom(double point, int question, int player)
+    {
+        return 0.0;
+    }
 }
 
 }
