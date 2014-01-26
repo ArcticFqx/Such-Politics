@@ -192,8 +192,11 @@ public class PopulationCollections : IPopulationModel {
 
     public double getDistanceFrom(double point, int question, int player)
     {
-        return 0.0;
-    }
+			double distance = answerReactions[question][0][player];
+			distance = point - distance;
+			
+			return (distance + 1)/2;
+	}
+	
 }
-
 }
