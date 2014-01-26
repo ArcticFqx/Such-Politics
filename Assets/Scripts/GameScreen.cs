@@ -109,7 +109,7 @@ public class GameScreen : MonoBehaviour {
 		print("Your score is now " + manager.getScore());
 		if (statementCounter == numStatements - 1)
 		{
-			Application.LoadLevel("menu");
+			Application.LoadLevel("gameover");
 		}
 		else
 		{
