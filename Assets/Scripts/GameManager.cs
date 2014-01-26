@@ -7,13 +7,14 @@ public class GameManager : MonoBehaviour {
     // To access the manager from any script, do
     // GameObject.FindObjectOfType<GameManager>();
 
+    public AudioClip audioClip;
+    AudioSource source;
     int score;
 
 	void Start () 
     {
-        print("imaginary loading screen just ran");
-        // Initialize all your stuff here
         score = 0;
+        source = gameObject.AddComponent<AudioSource>();
 	}
 
     void Awake()
@@ -29,5 +30,12 @@ public class GameManager : MonoBehaviour {
     public int getScore()
     {
         return score;
+    }
+
+    public void playSong()
+    {
+        source.clip = audioClip;
+        source.Play();
+        source.volume = 1.0f;
     }
 }

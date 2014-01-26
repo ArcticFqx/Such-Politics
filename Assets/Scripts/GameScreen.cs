@@ -29,6 +29,10 @@ public class GameScreen : MonoBehaviour {
         {
             Application.LoadLevel("menu");
         }
+        else
+        {
+            Application.LoadLevel("gamescene");
+        }
     }
 
     void OnGUI()
@@ -45,6 +49,7 @@ public class GameScreen : MonoBehaviour {
         style.contentOffset = new Vector2(8.0f,20.0f);
         style.padding.right = 14;
         style.wordWrap = true;
+        style.fontSize = 20;
         GUI.Box(new Rect(w / 2.0f - w * 0.25f, h - h * 0.25f, w * 0.5f, h * 0.22f), question, style);
         GUI.Box(new Rect(w / 2.0f - w * 0.25f, h - h * 0.25f, w * 0.5f, 20), category);
 

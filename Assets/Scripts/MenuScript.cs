@@ -13,7 +13,9 @@ public class MenuScript : MonoBehaviour {
         int buttonW = 100;
 		// Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
 		if(GUI.Button(new Rect((Screen.width/2) - (buttonW/2),
-            (Screen.height/2)  ,buttonW, buttonH), "Start")) {
+            (Screen.height/2)  ,buttonW, buttonH), "Start")) 
+        {
+            FindObjectOfType<GameManager>().playSong();
 			Application.LoadLevel("gamescene");
 		}
 
