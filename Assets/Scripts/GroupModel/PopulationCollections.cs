@@ -78,7 +78,7 @@ public class PopulationCollections : IPopulationModel {
 			answerReactions[i][0] = new float[groups.Count];
 			for (int j = 0; j < groups.Count; j++) {
 				if (j == 0) {
-					answerReactions[i][0][j] = 2*(float)rnd.NextDouble() - 1;
+					answerReactions[i][0][j] = (2*(float)rnd.NextDouble() - 1)/5;
 				} else {
 					answerReactions[i][0][j] = (float)rnd.NextDouble();
 					if (answerReactions[i][0][j-1] > 0) {
