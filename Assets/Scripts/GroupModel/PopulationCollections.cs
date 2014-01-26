@@ -14,38 +14,46 @@ public class PopulationCollections : IPopulationModel {
 	private float[][][] answerReactions;
 
 	public void generatePopulation(int populationSize, double[] populationFractions, List<GameObjectMutator> populationMutators, GameObject baseObject) {
-			DestroyIt (); // Clean if dirty
+			List<GameObject> generatedPeople = new List<GameObject>();
 
-			int numPopulations = populationFractions.Length;
+			for (int i = 0; i < populationSize; i++) {
+				generatedPeople.Add((GameObject) Object.Instantiate(baseObject));
+			}
+
+			generateWithPremadeObjects (generatedPeople, populationFractions, populationMutators);
+	}
+	
+	/*
+	 * Same result as generatePopulation, except with premade gameObjects
+	 */
+	public void generateWithPremadeObjects(IEnumerable<GameObject> generatedPeople, double[] populationFractions, List<GroupModel.GameObjectMutator> populationMutators) {
+		DestroyIt (); // Clean if dirty
+		
+		people.AddRange (generatedPeople);
 
 			int totalGeneratedPeople = 0;
-			for (int i = 0; i < numPopulations; i++) {
-				int popSize = (int)(populationSize * populationFractions[i]);
-				List<GameObject> peopleList = makePeopleForGroup(popSize, baseObject);
+			for (int i = 0; i < people.Count; i++) {
+				int popSize = (int)(people.Count * populationFractions[i]);
 
+				List<GameObject> peopleList = people.GetRange(totalGeneratedPeople, popSize);
 				PopulationManager group = new PopulationManager();
 				group.mutator = populationMutators[i];
-
+				
 				group.AddPeople(peopleList);
-				people.AddRange(peopleList);
-
 				groups.Add(group);
-
+				
 				totalGeneratedPeople += popSize;
 			}
 
-			if (totalGeneratedPeople < populationSize) {
+			if (totalGeneratedPeople < people.Count) {
 				// If there were some rounding errors
-
-				List<GameObject> peopleList = makePeopleForGroup(populationSize - totalGeneratedPeople, baseObject);
-				people.AddRange(peopleList);
+				
+				List<GameObject> peopleList = people.GetRange(totalGeneratedPeople, people.Count - totalGeneratedPeople);
 				int lastPos = groups.Count - 1;
 				groups[lastPos].AddPeople(peopleList);
 			}
-
-
 	}
-
+	
 		List<GameObject> makePeopleForGroup(int numPeople, GameObject baseObject) {
 			List<GameObject> peopleList = new List<GameObject>();
 
