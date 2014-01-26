@@ -116,7 +116,26 @@ public class DistrubatedPopulationModel : IPopulationModel
 	 */
     public void generateWithPremadeObjects(IEnumerable<GameObject> people, double[] populationFractions, List<GroupModel.GameObjectMutator> gameObjectMutators)
     {
+        gameObjectPopulation.AddRange(people);
 
+        this.numPlayers = populationFractions.Length;
+        this.playerPopularity = new double[populationFractions.Length];
+
+        this.stateMutators = gameObjectMutators;
+        this.population = PopulationBuilder.buildPopulation(gameObjectPopulation.Count, numPlayers, populationFractions, populationMean, populationVariance);
+
+        for (int i = 0; i < population.Length; i++)
+        {
+            GameObject newGameObject = gameObjectPopulation[i];
+            int mutator = getCorrectMutator(population[i]);
+            stateMutators[mutator].Mutate(newGameObject);
+            gameObjectPopulation.Add(newGameObject);
+
+            for (int j = 0; j < population[i].Length; j++)
+            {
+                playerPopularity[j] += population[i][j];
+            }
+        }
     }
 
     private int getCorrectMutator(double[] person)
