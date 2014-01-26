@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour {
     AudioSource source;
     int score;
 
+	public int activeStatement;
+
+	public IPopulationModel populationEngine;
+
 	void Start () 
     {
         score = 0;
