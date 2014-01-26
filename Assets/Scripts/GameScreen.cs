@@ -9,6 +9,8 @@ public class GameScreen : MonoBehaviour {
     string category;
     string positive;
     string negative;
+
+    float timestamp;
     GameManager manager;
 	void Start () {
         statements = Statement.getStatements();
@@ -18,11 +20,18 @@ public class GameScreen : MonoBehaviour {
         manager = GameObject.FindObjectOfType<GameManager>();
         positive = statements[start].getPositive();
         negative = statements[start].getNegative();
+        timestamp = Time.time + 15.0f;
 	}
-	
+
+    bool isPlaying = false;
+
 	// Update is called once per frame
 	void Update () {
-	
+        if ((timestamp - Time.time) < 8 && !isPlaying)
+        {
+            GetComponent<AudioSource>().Play();
+            isPlaying = true;
+        }
 	}
 
     void addScoreAndLoadNext(int score)
@@ -57,10 +66,16 @@ public class GameScreen : MonoBehaviour {
         GUI.Box(new Rect(w / 2.0f - w * 0.25f, h - h * 0.25f, w * 0.5f, h * 0.22f), question, style);
         GUI.Box(new Rect(w / 2.0f - w * 0.25f, h - h * 0.25f, w * 0.5f, 20), category);
 
+        style = new GUIStyle(GUI.skin.box);
+        style.fontSize = 30;
+        GUI.Box(new Rect(w / 2.0f - 20, 20, 40, 40), ((int)(timestamp - Time.time)).ToString(),style);
+
         style = new GUIStyle(GUI.skin.button);
         style.wordWrap = true;
         style.fontSize = 20;
         style.alignment = TextAnchor.UpperLeft;
+
+        
 
         if (GUI.Button(new Rect(w * 0.025f, h / 2, w * 0.2f, h * 0.4f), positive,style))
         {
