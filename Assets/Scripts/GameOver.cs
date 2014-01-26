@@ -35,14 +35,14 @@ public class GameOver : MonoBehaviour {
         style.wordWrap = true;
         if (won)
         {
-            GUI.Box(new Rect(w / 2.0f - 300, 200, 600, 500), "Congratulations, you are now the president and world domination has been achieved", style);
+            GUI.Box(new Rect(w / 2.0f - 300, 200, 600, 300), "Congratulations, you are now the president and world domination has been achieved", style);
         }
         else
         {
-            GUI.Box(new Rect(w / 2.0f - 300, 200, 600, 500), "Too bad, looks like we have to bow down to our reptilian overlords now :(", style);
+            GUI.Box(new Rect(w / 2.0f - 300, 200, 600, 300), "Too bad, looks like we have to bow down to our reptilian overlords now :(", style);
         }
 
-        if (GUI.Button(new Rect(w / 2.0f - 50, 600, 100, 40), "Main Menu"))
+        if (GUI.Button(new Rect(w / 2.0f - 50, 400, 100, 40), "Main Menu"))
         {
             FindObjectOfType<GameManager>().init();
             Application.LoadLevel("menu");
